@@ -18,7 +18,7 @@ class CategoryFactory extends Factory
             /* hay que indicarle la ruta donde queremos que se almacene la imagen
             * y las dimensiones como parametro extra
             */
-            'image' => 'products/'.$this->faker->image('public/storage/products', 640, 480, null, false)
+            'image' => 'categories/'.$this->faker->image('public/storage/categories', 640, 480, null, false)
         ];
     }
 }
