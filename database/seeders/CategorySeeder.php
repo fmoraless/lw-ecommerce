@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Brand;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -44,7 +45,14 @@ class CategorySeeder extends Seeder
         ];
 
         foreach ($categories as $category) {
-            Category::factory(1)->create($category);
+            $category = Category::factory(1)->create($category)->first();
+            /* almacenamos la coleccion en una variable */
+            $brands = Brand::factory(4)->create();
+
+            /* Iterar */
+            foreach ($brands as $brand) {
+                $brand->categories()->attach($category->id);
+            }
         }
     }
 }
