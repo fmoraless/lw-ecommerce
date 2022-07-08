@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Product;
 
 class CreateProductsTable extends Migration
 {
@@ -22,7 +23,8 @@ class CreateProductsTable extends Migration
 
             $table->unsignedBigInteger('subcategory_id');
             $table->foreign('subcategory_id')->references('id')->on('subcategories');
-            $table->integer('quantity');
+            $table->integer('quantity')->nullable();
+            $table->enum('status', [Product::BORRADOR, Product::PUBLIDADO])->default(Product::BORRADOR);
             $table->unsignedBigInteger('brand_id');
             $table->foreign('brand_id')->references('id')->on('brands');
 
