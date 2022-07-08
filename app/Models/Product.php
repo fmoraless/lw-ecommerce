@@ -9,6 +9,9 @@ class Product extends Model
 {
     use HasFactory;
 
+    const BORRADOR = 1;
+    const PUBLIDADO = 2;
+
     protected $guarded = [
         'id',
         'created_at',
