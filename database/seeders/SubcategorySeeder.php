@@ -27,32 +27,32 @@ class SubcategorySeeder extends Seeder
                 'category_id' => 1,
                 'name' => 'Accesorios para Celulares',
                 'slug' => Str::slug('Accesorios para Celulares'),
-                
+
             ],
             [
                 'category_id' => 1,
                 'name' => 'Smartwatches',
                 'slug' => Str::slug('Smartwatches'),
-                
+
             ],
             /* TV audio y video */
             [
                 'category_id' => 2,
                 'name' => 'TV y audio',
                 'slug' => Str::slug('TV y audio'),
-               
+
             ],
             [
                 'category_id' => 2,
                 'name' => 'Audio',
                 'slug' => Str::slug('Audio'),
-                
+
             ],
             [
                 'category_id' => 2,
                 'name' => 'Audio para auto',
                 'slug' => Str::slug('Audio para auto'),
-                
+
             ],
             /* Consola y videojuegos */
             [
@@ -101,11 +101,15 @@ class SubcategorySeeder extends Seeder
                 'category_id' => 5,
                 'name' => 'Mujeres',
                 'slug' => Str::slug('mujeres'),
+                'color' => true,
+                'size' => true
             ],
             [
                 'category_id' => 5,
                 'name' => 'Hombres',
                 'slug' => Str::slug('hombres'),
+                'color' => true,
+                'size' => true
             ],
             [
                 'category_id' => 5,
