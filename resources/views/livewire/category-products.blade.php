@@ -7,9 +7,9 @@
                         <article>
                         <figure>
                             @if($product->images->isNotEmpty())
-                                <img src="{{ Storage::url($product->images->first()->url) }}" alt="">
+                                <img class="h-48 w-56 object-cover object-center" src="{{ Storage::url($product->images->first()->url) }}" alt="">
                             @else
-                                <img src="{{ asset('images/default-image2.png') }}" alt="Default Image">
+                                <img class="h-48 w-56 object-cover object-center" src="{{ asset('images/default-image.png') }}" alt="Default Image">
                             @endif
                         </figure>
                             <div class="py-4 px-6">
