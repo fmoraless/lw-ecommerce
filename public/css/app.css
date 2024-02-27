@@ -1142,9 +1142,6 @@ select {
 .col-span-3 {
 	grid-column: span 3 / span 3;
 }
-.col-span-4 {
-	grid-column: span 4 / span 4;
-}
 .mx-auto {
 	margin-left: auto;
 	margin-right: auto;
@@ -1456,9 +1453,6 @@ select {
 }
 .grid-cols-2 {
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.grid-cols-5 {
-	grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 .flex-col {
 	flex-direction: column;
@@ -2374,6 +2368,10 @@ select {
 		transform: var(--tw-transform);
 	}
 
+	.sm\:grid-cols-2 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
 	.sm\:items-start {
 		align-items: flex-start;
 	}
@@ -2508,6 +2506,14 @@ select {
 
 	.lg\:col-span-4 {
 		grid-column: span 4 / span 4;
+	}
+
+	.lg\:grid-cols-5 {
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+	}
+
+	.lg\:grid-cols-4 {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 
 	.lg\:px-8 {
