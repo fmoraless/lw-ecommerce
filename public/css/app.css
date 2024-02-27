@@ -1232,6 +1232,12 @@ select {
 .mb-2 {
 	margin-bottom: 0.5rem;
 }
+.mr-1 {
+	margin-right: 0.25rem;
+}
+.mt-auto {
+	margin-top: auto;
+}
 .-mt-px {
 	margin-top: -1px;
 }
@@ -1348,6 +1354,9 @@ select {
 }
 .w-9 {
 	width: 2.25rem;
+}
+.w-56 {
+	width: 14rem;
 }
 .min-w-0 {
 	min-width: 0px;
@@ -1927,6 +1936,10 @@ select {
 .text-trueGray-700 {
 	--tw-text-opacity: 1;
 	color: rgba(64, 64, 64, var(--tw-text-opacity));
+}
+.text-yellow-400 {
+	--tw-text-opacity: 1;
+	color: rgba(251, 191, 36, var(--tw-text-opacity));
 }
 .text-red-100 {
 	--tw-text-opacity: 1;
