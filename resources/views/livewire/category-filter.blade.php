@@ -91,9 +91,9 @@
                                         </div>
                                     </div>
                                     <div class="mt-auto mb-6">
-                                        <x-jet-danger-button>
+                                        <x-danger-enlace href="{{route('products.show', $product)}}">
                                             Más información
-                                        </x-jet-danger-button>
+                                        </x-danger-enlace>
                                     </div>
                                 </div>
                             </article>

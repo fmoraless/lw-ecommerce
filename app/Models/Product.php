@@ -28,12 +28,10 @@ class Product extends Model
         return $this->belongsTo(Subcategory::class);
     }
 
-
     /* Relacion muchos a muchos*/
     public function colors(){
         return $this->belongsToMany(Color::class);
     }
-
 
     /* Relacion uno a muchos*/
     public function sizes(){
@@ -43,5 +41,11 @@ class Product extends Model
     /* relacion uno a muchos polimorfica */
     public function images(){
         return $this->morphMany(Image::class, "imageable");
+    }
+
+    // url amigable
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }
