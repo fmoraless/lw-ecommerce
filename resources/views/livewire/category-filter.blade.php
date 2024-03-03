@@ -91,7 +91,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-auto mb-6">
-                                        <x-danger-enlace href="{{route('products.show', $product)}}">
+                                        <x-danger-enlace href="{{ route('products.show', $product) }}">
                                             Más información
                                         </x-danger-enlace>
                                     </div>
