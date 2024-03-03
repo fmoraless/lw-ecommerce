@@ -19,7 +19,7 @@ module.exports = {
             colors: {
                 'trueGray': colors.trueGray,
                 'orange': colors.orange,
-                'greenLime': colors.greenLime,
+                'greenLime': colors.lime,
             }
         },
     },
