@@ -1158,6 +1158,10 @@ select {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
+.mx-2 {
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}
 .ml-3 {
 	margin-left: 0.75rem;
 }
@@ -1238,6 +1242,9 @@ select {
 }
 .mt-auto {
 	margin-top: auto;
+}
+.mr-4 {
+	margin-right: 1rem;
 }
 .-mt-px {
 	margin-top: -1px;
@@ -1942,6 +1949,10 @@ select {
 .text-yellow-400 {
 	--tw-text-opacity: 1;
 	color: rgba(251, 191, 36, var(--tw-text-opacity));
+}
+.text-greenLime-600 {
+	--tw-text-opacity: 1;
+	color: rgba(101, 163, 13, var(--tw-text-opacity));
 }
 .text-red-100 {
 	--tw-text-opacity: 1;
