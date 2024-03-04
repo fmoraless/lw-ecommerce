@@ -35,7 +35,7 @@ class Product extends Model
 
     /* Relacion uno a muchos*/
     public function sizes(){
-        return $this->belongsTo(Size::class);
+        return $this->hasMany(Size::class);
     }
 
     /* relacion uno a muchos polimorfica */
