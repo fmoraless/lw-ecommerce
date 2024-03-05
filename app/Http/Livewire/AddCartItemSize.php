@@ -8,6 +8,9 @@ use Livewire\Component;
 class AddCartItemSize extends Component
 {
     public $product, $sizes;
+    public $color_id = "";
+    public $qty = 1;
+    public $quantity = 0;
     public $size_id = "";
     public $colors = [];
 
@@ -15,6 +18,13 @@ class AddCartItemSize extends Component
     {
         $size = Size::find($value);
         $this->colors = $size->colors;
+    }
+
+    public function updatedColorId($value)
+    {
+        $size = Size::find($this->size_id);
+        $this->quantity = $size->colors
+            ->find($value)->pivot->quantity;
     }
 
     public function mount()
