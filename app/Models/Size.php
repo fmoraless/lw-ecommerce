@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Size extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'name',
         'product_id'
@@ -22,6 +22,6 @@ class Size extends Model
 
     /* Relacion muchos a muchos*/
     public function colors(){
-        return $this->belongsToMany(Color::class);
+        return $this->belongsToMany(Color::class)->withPivot('quantity');
     }
 }
