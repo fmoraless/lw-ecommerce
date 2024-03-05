@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
+use Gloudemans\Shoppingcart\Facades\Cart;
+
 class AddCartItem extends Component
 {
     public $product, $quantity;
@@ -21,6 +23,16 @@ class AddCartItem extends Component
         $this->qty = $this->qty + 1;
     }
 
+    public function addItem()
+    {
+        Cart::add([
+            'id' => $this->product->id,
+            'name' => $this->product->id,
+            'qty' => $this->qty,
+            'price' => $this->product->price,
+            'weight' => 550,
+        ]);
+    }
     public function render()
     {
         return view('livewire.add-cart-item');
