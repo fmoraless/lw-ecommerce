@@ -13,10 +13,10 @@
     <div class="mt-2">
         <p class="text-xl text-gray-700">Color: </p>
         <select class="form-control w-full">
-            <option value="" selected disabled>Seleccione una talla</option>
+            <option value="" selected disabled>Seleccione un color</option>
 
             @foreach($colors as $color)
-                <option value="{{$color->id}}">{{$color->name}}</option>
+                <option class="capitalize" value="{{$color->id}}">{{__($color->name)}}</option>
             @endforeach
         </select>
     </div>
