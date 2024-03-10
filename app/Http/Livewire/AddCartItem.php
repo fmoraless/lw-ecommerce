@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -10,9 +11,12 @@ class AddCartItem extends Component
 {
     public $product, $quantity;
     public $qty = 1;
+    public $options = [];
 
     public function mount(){
         $this->quantity = $this->product->quantity;
+        $this->options['image'] =
+            Storage::url($this->product->images->first()->url);
     }
 
     public function decrement() {
@@ -27,10 +31,11 @@ class AddCartItem extends Component
     {
         Cart::add([
             'id' => $this->product->id,
-            'name' => $this->product->id,
+            'name' => $this->product->name,
             'qty' => $this->qty,
             'price' => $this->product->price,
             'weight' => 550,
+            'options' => $this->options
         ]);
     }
     public function render()
