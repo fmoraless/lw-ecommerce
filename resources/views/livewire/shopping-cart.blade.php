@@ -27,7 +27,7 @@
                                     @if($item->options->size)
                                         <span class="mx-1">-</span>
                                         <span>
-                                            {{ $item->options->color }}
+                                            {{ $item->options->size }}
                                         </span>
                                     @endif
                                 </div>
@@ -42,7 +42,7 @@
                         <td>
                             @if($item->options->size)
                                 @livewire('update-cart-item-size', ['rowId' => $item->rowId], key($item->rowId))
-                            @elseif($item->options->colors)
+                            @elseif($item->options->color)
                                 @livewire('update-cart-item-color', ['rowId' => $item->rowId], key($item->rowId))
                             @else
                                 @livewire('update-cart-item', ['rowId' => $item->rowId], key($item->rowId))
