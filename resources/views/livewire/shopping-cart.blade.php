@@ -1,7 +1,8 @@
 <div class="container py-8">
     <section class="bg-white rounded-lg shadow-lg p-6 text-gray-700">
         <h1 class="text-lg font-semibold mb-6">CARRO DE COMPRAS</h1>
-        <table class="table-auto w-full">
+        @if (Cart::count())
+            <table class="table-auto w-full">
             <thead>
                 <tr>
                     <th></th>
@@ -57,5 +58,21 @@
                 @endforeach
             </tbody>
         </table>
+
+        <a class="text-sm cursor-pointer hover:underline mt-3 inline-block"
+            wire:click="destroy"
+        >
+            <i class="fas fa-trash"></i>
+            Borrar carro de compra
+        </a>
+        @else
+            <div class="flex flex-col items-center">
+                <x-cart />
+                <p class="text-lg text-gray-700 mt-4">Tu carro de compras está vacío</p>
+                <x-button-enlace href="/" class="px-16 mt-4">
+                    Ir al inicio
+                </x-button-enlace>
+            </div>
+        @endif
     </section>
 </div>
