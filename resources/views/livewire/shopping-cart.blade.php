@@ -36,7 +36,11 @@
                         </td>
                         <td class="text-center">
                             <span>USD {{$item->price}}</span>
-                            <a class="ml-6 cursor-pointer hover:text-red-500">
+                            <a class="ml-6 cursor-pointer hover:text-red-600"
+                                wire:click="delete('{{$item->rowId}}')"
+                                wire:loading.class="text-red-600 opacity-25"
+                                wire:target="delete('{{$item->rowId}}')"
+                            >
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>

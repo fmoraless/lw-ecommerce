@@ -13,7 +13,12 @@ class ShoppingCart extends Component
         Cart::destroy();
 
         $this->emitTo('dropdown-cart', 'render');
+    }
 
+    public function delete($rowId){
+        Cart::remove($rowId);
+
+        $this->emitTo('dropdown-cart', 'render');
     }
 
     public function render()
