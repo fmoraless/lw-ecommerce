@@ -6,6 +6,8 @@ use Illuminate\Auth\Events\Logout;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
+use Gloudemans\Shoppingcart\Facades\Cart;
+
 class MergeTheCartLogout
 {
     /**
@@ -26,6 +28,9 @@ class MergeTheCartLogout
      */
     public function handle(Logout $event)
     {
-        //
+        //Eliminar registro
+        Cart::erase(auth()->user()->id);
+        // nuevo registro
+        Cart::store(auth()->user()->id);
     }
 }
