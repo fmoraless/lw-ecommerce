@@ -2,6 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Order;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use App\Models\Department;
 
@@ -11,6 +14,7 @@ class CreateOrder extends Component
     public $contact, $phone, $address, $references;
     public $department, $cities = [], $districts = [];
     public $department_id = "", $city_id = "", $district_id ="";
+    public $shipping_cost = 0;
 
     public $rules = [
         'contact'    => 'required',
@@ -48,6 +52,21 @@ class CreateOrder extends Component
         }
 
         $this->validate($rules);
+
+        $order = new Order();
+        $order->user_id = Auth::user()->id;
+        $order->contact = $this->contact;
+        $order->phone = $this->phone;
+        $order->envio_type = $this->envio_type;
+        $order->shipping_cost = $this->shipping_cost;
+        $order->total = $this->shipping_cost + Cart::subtotal();
+        $order->content = Cart::content();
+        $order->save();
+
+        Cart::destroy();
+
+        // redirigir al usuario a pagar
+        return redirect()->route('orders.payment', $order);
     }
 
     public function render()
