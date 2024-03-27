@@ -8,6 +8,7 @@ Plataforma Ecommerce
 
 - Mantenedor de productos
 - Categorias
+- Gestor de Ordenes
 - Pasarela de pago
 - Envios
 ## Instalación
